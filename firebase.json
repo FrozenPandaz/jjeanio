@@ -3,12 +3,21 @@
     "rules": "firebase-config/firestore.rules",
     "indexes": "firebase-config/firestore.indexes.json"
   },
+  "functions": {
+    "source": "."
+  },
   "hosting": {
     "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "server"
+      }
     ]
   }
 }

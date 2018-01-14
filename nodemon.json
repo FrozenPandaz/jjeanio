@@ -1,0 +1,6 @@
+{
+  "watch": [
+    "dist-server/main.bundle.js",
+    "dist-ts/**/*.js"
+  ]
+}
