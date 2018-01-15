@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+
+branches:
+  only:
+    - master
+
+language: node_js
+cache:
+  directories:
+    - node_modules
+node_js:
+ - 8
+ - 9
+
+before_script:
+  - npm run lint
+  - npm run test -- --single-run
+  - npm run e2e
+
+script:
+  - npm run build:prod
+
+after_script:
+ - ls -lh
+
+deploy:
+  provider: firebase
+  on:
+    branch: master
+    node: '8'
+    token:
+      secure: "aYffcf1DTPy4NU8rDFLZsAiiL7AvzwvZGcSbGDpMUQnj9v/XKqEtdbFzn2jjdmsvTtphGPw+G7sjYi+voTIz+9FzfC7uhqmfuDTWYoM2o7le7XEtjkTxdB2/u6hCRTERW6mPyLZ1cbd0vhrwDm8i69TlMG9KKWWCUQjntw+d2bQIRImdlRzYc4+YfqFHLGV6Tq28ZsMUSX0yw9wVn0VNJ8/jq0MfGeO1fOnYbHTyXKzvTD+3Q5YmetmT16QXmY+6ge2ELfRS7KW3hIb4kS7g2r9Sq7UBQZqGMdwo3JEBUbiALUAFj15zyd9o2kQZCfEnrluI07uZi0zHLwW1oXc8eglxOj7D8nee26jKPVyNH19Yqu+TY6iDqYg90aqtIDb5q/OogY+4dPisiuscrNy7yVxu/soAPEhHsBJQIuvQA64x8o3cR+tZaKe3GgB8XPFJfkbt75Darg/IT9z9ChYIZsTZQbIB00pzxrKDlwQh8VaW0X31pw7SA96CjWXGZS1gu+JtihOdpu9YV3+beGb8fTNucvrTNJkq4bact/2lTr1HxRK2ci/hmmN53Dv7yH6dX445Zuu/ss3hv+jbzH1yfMhu+G79rAM9bQlept1Ci5EY46xmU+0mhuqhAKvVCyOMKwTxLyb6FAQ3MWckqt7WnGWH9XMgKqyGYclUQRWSOPE="
