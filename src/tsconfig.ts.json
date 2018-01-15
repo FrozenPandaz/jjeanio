@@ -1,13 +1,13 @@
 {
-  "extends": "./tsconfig.server.json",
-  "compilerOptions": {
-    "outDir": "../dist-ts",
-    "allowJs": true,
-    "types": [
-      "node"
-    ]
-  },
-  "files": [
-    "./server.ts"
-  ]
+	"extends": "./tsconfig.server.json",
+	"compilerOptions": {
+		"outDir": "../dist-ts",
+		"allowJs": true,
+		"types": [
+			"node"
+		]
+	},
+	"files": [
+		"./server.ts"
+	]
 }
