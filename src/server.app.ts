@@ -32,6 +32,9 @@ export function getApp() {
 	];
 	routes.forEach(route => {
 		app.get(route, (req, res) => {
+			// Cache Responses in CDN for a Day
+			res.setHeader('Cache-Control', 's-max-age=86400');
+
 			const index = req.query.static ? staticPath : indexPath;
 			res.render(index, {
 				req,

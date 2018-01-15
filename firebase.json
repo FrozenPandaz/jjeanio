@@ -7,6 +7,35 @@
 		"source": "."
 	},
 	"hosting": {
+		"headers": [
+			{
+				"source": "**/*.@(js|css)",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "max-age=43200; s-max-age=31557600"
+					}
+				]
+			},
+			{
+				"source": "/index_.html",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				]
+			},
+			{
+				"source": "ngsw-worker.js",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				]
+			}
+		],
 		"public": "dist",
 		"ignore": [
 			"firebase.json",
