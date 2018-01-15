@@ -1,3 +1,11 @@
-<h1>Welcome to Jason Jean's Website</h1>
-
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+	<mat-sidenav #sidenav mode="over">
+		<jj-sidenav></jj-sidenav>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<jj-header (menuToggle)="sidenav.toggle()"></jj-header>
+		<main>
+			<router-outlet></router-outlet>
+		</main>
+	</mat-sidenav-content>
+</mat-sidenav-container>

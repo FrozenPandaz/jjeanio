@@ -32,7 +32,7 @@ export function getApp() {
 	];
 	routes.forEach(route => {
 		app.get(route, (req, res) => {
-			const index = req.query.dynamic ? indexPath : staticPath;
+			const index = req.query.static ? staticPath : indexPath;
 			res.render(index, {
 				req,
 				res
