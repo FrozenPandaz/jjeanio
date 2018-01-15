@@ -58,6 +58,18 @@
 			"exclude": "**/node_modules/**"
 		},
 		{
+			"project": "src/tsconfig.server.json",
+			"exclude": "**/node_modules/**"
+		},
+		{
+			"project": "src/tsconfig.ts.json",
+			"exclude": "**/node_modules/**"
+		},
+		{
+			"project": "src/tsconfig.firebase.json",
+			"exclude": "**/node_modules/**"
+		},
+		{
 			"project": "e2e/tsconfig.e2e.json",
 			"exclude": "**/node_modules/**"
 		}
