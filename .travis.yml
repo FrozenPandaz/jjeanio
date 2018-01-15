@@ -4,6 +4,7 @@ dist: trusty
 branches:
   only:
     - master
+    - /^greenkeeper/.*$/
 
 language: node_js
 cache:
@@ -14,6 +15,8 @@ node_js:
  - 9
 
 before_script:
+  - npm install -g greenkeeper-lockfile@1
+  - greenkeeper-lockfile-update
   - npm run lint
   - npm run test -- --single-run
   - npm run e2e
@@ -22,6 +25,7 @@ script:
   - npm run build:prod
 
 after_script:
+ - greenkeeper-lockfile-upload
  - ls -lh
 
 deploy:
