@@ -13,8 +13,8 @@ export function getApp() {
 
 	const distPath = path.join(__dirname, '../dist');
 	const srcPath = path.join(__dirname, '../src');
-	const indexPath = path.join(distPath, './index.html');
-	const staticPath = path.join(srcPath, './index.html');
+	const indexPath = path.join(distPath, './index_.html');
+	const staticPath = path.join(srcPath, './index_.html');
 
 	app.engine('html', ngExpressEngine({
 		bootstrap: AppServerModuleNgFactory,
