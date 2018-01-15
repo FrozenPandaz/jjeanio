@@ -15,6 +15,7 @@ node_js:
  - 9
 
 before_script:
+  - commitlint-travis
   - npm install -g greenkeeper-lockfile@1
   - greenkeeper-lockfile-update
   - npm run lint
