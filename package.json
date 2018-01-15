@@ -8,6 +8,7 @@
     "start": "ng serve",
     "predeploy": "npm run build:prod",
     "deploy": "firebase deploy",
+    "postbuild:prod": "node postprocess.js",
     "build:prod": "concurrently 'npm run build:client:prod' 'npm run build:server:ng' 'npm run build:server:firebase' --names 'CLIENT,SERVER:NG,SERVER:FB' -c 'green.bold,blue.bold,yellow.bold'",
     "build:client:prod": "ng build --prod",
     "build:client": "ng build --aot",
